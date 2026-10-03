@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Membuat Form</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>INI ADALAH SUBWEB MEMBUAT FORM</h1>
+    <hr>
+
+
+    <div class="form-container">
+        <form>
+
+        
+        <!-- Input Teks Biasa -->
+        <label for="nama">Nama Lengkap: </label><br>
+        <input type="text" id="nama" placeholder="Masukan Nama"><br><br>
+
+        <label for="password">Password: </label><br>
+        <input type="password" id="password" placeholder="Masukan Passowrd"><br><br>
+
+        <label for="umur">Umur: </label><br>
+        <input type="number" id="umur" placeholder="Masukan Umur"><br><br>
+
+        <label for="em">Email: </label><br>
+        <input type="email" id="em" placeholder="Masukan Email"><br><br>
+
+        <!-- pilihan -->
+        <label for="Role">Pilih Role: </label><br>
+        <select id="Role">
+            <option value="pilih">--- PILIH SALAH SATU ---</option>
+            <option value="soc">SOC ANALYST</option>
+            <option value="cloud">CLOUD ARCHITECT</option>
+            <option value="john">Billy john</option>
+        </select><br><br>
+
+        <!-- Radio Button -->
+        <label for="jenis Kelamin">Jenis Kelamin: </label><br>
+        <input type="radio" id="laki" name="gendre" value="laki">
+        <label for="laki">laki-laki</label><br>
+        <input type="radio" name="gendre" id="cewe" value="cewe">
+        <label for="cewe">cewe</label><br><br>
+
+        <!-- Tombol Kirim-->
+        <input type="submit" value="Daftar">
+        <input type="reset" name="reset" value="reset">
+    </form>
+    </div>
+
+    <div class="catatan">
+        <p>iniadalah catatan saya</p>
+    </div>
+    
+</body>
+</html>
