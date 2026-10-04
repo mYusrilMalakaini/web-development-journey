@@ -58,7 +58,7 @@ h2 {
 }
 
 h3 {
-    color: #2d3748;
+    color: #154caa;
     padding-top: 15px;
     margin-bottom: 10px;
 }
@@ -68,4 +68,114 @@ img {
     height: auto;
     border-radius: 15px;
     margin: 15px 0px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-left: 0px;
+    margin-bottom: 5px;
+}
+
+#Acara {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-bottom: 15px; */
+    gap: 15px;
+}
+
+.workshop-sains, .kompetisi-sains, .seminar-sains {
+    flex: 1;
+    min-width: 250px;
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+}
+
+thead {
+    background-color: rgb(174, 167, 167);
+    color: black;
+}
+
+th,td {
+    border: 1px solid #cbd5e0;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: ##f7fafc;
+}
+
+tfoot {
+    background-color: #edf2f7;
+    font-size: 13px;
+    font-style: italic;
+    color: #4a5568;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    font-weight: bold;
+    color: #4a5568;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: solid #cbd5e0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #3182ce;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2b6cb0;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #718096;
+    font-size: 15px;
 }
