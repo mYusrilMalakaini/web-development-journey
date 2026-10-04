@@ -40,3 +40,32 @@ nav a {
 nav a:hover {
     color: #3182ce;
 }
+
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 11);
+}
+
+h2 {
+    color: #2b6cb0;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #2d3748;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 15px 0px;
+}
