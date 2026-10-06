@@ -136,6 +136,16 @@ li {
     border-radius: 10px;
 }
 
+#Jadwal {
+    background-color: #ffffff;
+    color: #4a5568;
+}
+
+.rundown {
+    width: 100%;
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -148,10 +158,13 @@ thead {
     color: black;
 }
 
-th,td {
-    border: 1px solid #cbd5e0;
-    padding: 10px 12px;
-    text-align: center;
+@media screen and (max-width: 600px) { 
+    th, td {
+        font-size: 11px;         
+        border: 1px solid #cbd5e0;
+        padding: 4px 5px;        
+        text-align: center;
+    }
 }
 
 tbody tr:nth-child(even) {
