@@ -60,7 +60,7 @@ h2 {
 h3 {
     color: #154caa;
     padding-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 img {
@@ -123,6 +123,19 @@ li {
     
 }
 
+.card h3 {
+    font-size: 14px;
+    color: #0d3b66;
+    margin-bottom: 8px;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    height: 180px;
+    border-radius: 10px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -142,7 +155,7 @@ th,td {
 }
 
 tbody tr:nth-child(even) {
-    background-color: ##f7fafc;
+    background-color: #f7fafc;
 }
 
 tfoot {
