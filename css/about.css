@@ -20,7 +20,6 @@ body {
     height: 100vh;
     background-color: var(--bg-priamry);
 }
-
 .wrapper {
     display: flex;
     justify-content: center;
@@ -39,7 +38,6 @@ body {
 
 .text-center {
     text-align: center;
-    font-style: ;
 }
 
 .title {
@@ -71,4 +69,16 @@ body {
     color: var(--txt-primary);
     -ms-transform: rotate(2deg);
     transform: rotate(2deg);
+    transition: 0.3s ease-in-out;
+}
+
+.wripper-about {
+    display: block;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.text-saya {
+    font-size: 14px;
 }
