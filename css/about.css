@@ -3,7 +3,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    /* font-family: "Poppins", sans-serif; */
     font-family: "Silkscreen", sans-serif;
 }
 
@@ -33,8 +32,9 @@ body {
     border: 1px solid white;
     background-color: var(--bg-secondary);
     color: var(--txt-secondary);
-    padding: 50px;
-    margin: 10px;
+    padding: 32px;
+    margin: 8px;
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
 }
 
 .text-center {
@@ -42,7 +42,33 @@ body {
     font-style: ;
 }
 
+.title {
+    font-size: 2em;
+}
+
 .icons {
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 24px;
     color: var(--icons-bg-primary);
+}
+
+.description {
+    margin-top: 10px;
+    font-size: .5em;
+}
+
+.btn {
+    margin-top: 16px;
+    padding: 2px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--bg-priamry);
+    color: var(--txt-primary);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
 }
