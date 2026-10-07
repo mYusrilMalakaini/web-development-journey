@@ -17,17 +17,20 @@ body {
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: auto; 
+    display: block;
+    min-height: 100vh;
     background-color: var(--bg-priamry);
 }
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    height: auto;
+    align-items: center;
 }
 
 .card {
+    width: 40%;
     border: 1px solid white;
     background-color: var(--bg-secondary);
     color: var(--txt-secondary);
@@ -72,8 +75,46 @@ body {
     transition: 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 500px) {
-    .container{
-        background-color: tomato;
+.container2 {
+        display: none;
+    }
+
+
+@media screen and (max-width: 476px) {
+    .container {
+        background-color: white;
+    }
+
+    .card {
+        width: 95%;
+    }
+
+    .title {
+        font-size: 3em;
+    }
+
+    .icons {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        padding: 16px;
+        font-size: 1.5em;
+    }
+
+    
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        display: none;
+    }
+
+    .container2 {
+        display: block;
     }
 }
