@@ -15,6 +15,36 @@ body {
     --icons-bg-secondary: rgb(24, 99, 24);
 }
 
+header {
+    background-color: var(--bg-priamry);
+    color: black;
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
+    display: flex;
+    padding: 20px;
+}
+
+li {
+    display: flex;
+    padding: 10px;
+}
+
+.logo {
+    margin-right: auto;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+a {
+    color: var(--bg-secondary);
+}
+
 .container {
     width: 100%;
     height: auto; 
@@ -75,12 +105,12 @@ body {
     transition: 0.3s ease-in-out;
 }
 
-.container2 {
+/* .container2 {
         display: none;
-    }
+    } */
 
 
-@media screen and (max-width: 476px) {
+/* @media screen and (max-width: 476px) {
     .container {
         background-color: white;
     }
@@ -107,9 +137,9 @@ body {
     }
 
     
-}
+} */
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
     .container {
         display: none;
     }
@@ -117,4 +147,4 @@ body {
     .container2 {
         display: block;
     }
-}
+} */

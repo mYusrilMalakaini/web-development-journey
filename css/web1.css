@@ -9,6 +9,7 @@ header {
     background-color: #1A2238;
     color: #eaeaea;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -18,10 +19,17 @@ header {
     margin-right: auto;
     margin-left: 10px;
     cursor: pointer;
+    transition: all .5s ease 0s;
+}
+
+.logo:hover {
+    color: rgb(64, 64, 158);
+    transform: rotate(2deg);
 }
 
 .btn-cta {
-    margin-right: 10px;
+    background-color: #1A2238;
+    margin-right: 12px;
     border-radius: 5px;
     padding: 6px 12px;
     cursor: pointer;
@@ -29,6 +37,7 @@ header {
 }
 
 .btn-cta:hover {
+    transition: all .5s ease;
     background-color: rgb(64, 64, 158);
 }
 
@@ -40,9 +49,83 @@ nav ul{
 li {
     list-style-type: none;
     padding: 10px;
+    
+}
+
+li a{
+    transition: all .5s ease 0s;
+    display: block;
+}
+
+li a:hover {
+    transform: rotate(2deg);
+    color: rgb(64, 64, 158);
 }
 
 a {
     color: #eaeaea;
     text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.img-foto {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.parallax {
+    background-image: url("/assets/porche.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.tentang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: #1A2238; */
+    color: #eaeaea;
+    padding: 20px;
+}
+
+.btn-10 {
+    margin-top: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 20px;
+    color: #1A2238;
 }
