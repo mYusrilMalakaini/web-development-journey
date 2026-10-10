@@ -112,16 +112,16 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: #1A2238; */
+    background-color: #1A2238;
     color: #eaeaea;
-    padding: 20px;
+    padding: 40px;
 }
 
 .btn-10 {
     margin-top: 20px;
 }
 
-.cards {
+.card {
     display: flex;
     justify-content: center;
     align-items: center;
