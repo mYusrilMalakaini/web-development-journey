@@ -1,184 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hai, Vawkyy!</title>
-
-<style>
-body {
-    background: radial-gradient(circle at top, #0f0f0f, #000000);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: monospace;
-    color: #00ff88;
-    padding: 20px 10px;
-}
-
-/* Terminal */
-.terminal {
-    background: #111;
-    width: 100%;
-    max-width: 900px;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 0 40px rgba(0,255,150,0.4);
-    overflow-x: auto;
-}
-
-.header {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-#content {
-    white-space: pre;
-    font-size: clamp(8px, 2.3vw, 14px);
-    line-height: 1.3;
-}
-
-.cursor {
-    display: inline-block;
-    width: 8px;
-    background: #00ff88;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%,50%,100% { opacity:1; }
-    25%,75% { opacity:0; }
-}
-
-.spotify {
-    margin-top: 25px;
-    width: 100%;
-    max-width: 900px;
-    display: none;
-}
-</style>
-</head>
-
-<body>
-
-<div class="terminal">
-    <div class="header">
-        <div class="dot red"></div>
-        <div class="dot yellow"></div>
-        <div class="dot green"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/web1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Web Portofolio Pertama Yusril</title>
+  </head>
+  <body>
+    <header class="animate__animated animate__backInDown animate__faster">
+      <div class="logo">
+        <img src="assets/partner.png" alt="logo" class="logo-img" />
+        <h1 class="logo-title animate__animated animate__swing animate__infinite">Yusril L</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">TENTANG</a></li>
+          <li><a href="#JASA">JASA</a></li>
+          <li>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=yusrilmalakainii@gmail.com"
+              >KONTAK</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <button class="btn-cta" onclick="redirInstagram()">Follow Saya</button>
+    </header>
+    <div class="container">
+      <div class="intro">
+        <p class="title animate__animated animate__backInLeft">Hello, my name is yusril</p>
+        <p class="description animate__animated animate__backInRight">Technology Influencer from village</p>
+        <img src="assets/lampion.jpg" alt="yusril foto 1" class="img-foto animate__animated animate__backInUp" />
+      </div>
     </div>
-    <div id="content"></div><span class="cursor"></span>
-</div>
+    <div class="parallax">
+      <div class="tentang">
+        <p class="title">Saya adalah programmer</p>
+        <p class="description">IT doang gabisa ngoding asuuu</p>
+        <div class="btn-10">
+          <button class="btn-cta" onclick="redirWhatsaap()">
+            Mari kerjaSama
+          </button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card" id="JASA">
+          <div class="card-item">
+            <img src="assets/24-hour.jpg" alt="icons-1" class="icon" />
+            <p class="card-title">Pelayanan Nonstop</p>
+            <p class="card-description">
+              Service 24 jam nonstop ketika anda membutuhkan bantuan
+            </p>
+          </div>
+          <div class="card-item">
+            <img src="assets/hot-deal.png" alt="icons-2" class="icon" />
+            <p class="card-title">Saya ingin jadi cloud</p>
+            <p class="card-description">
+              saya sedang belajar cloud plss aku mau
+            </p>
+          </div>
+          <div class="card-item">
+            <img src="assets/rating.png" alt="icons-3" class="icon" />
+            <p class="card-title">689 Review</p>
+            <p class="card-description">
+              mereka merasa sangat senang saat ini ketika pake
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p class="title">&copy; yusril malakaini website</p>
+    </footer>
 
-<div class="spotify" id="spotify">
-  <iframe style="border-radius:12px"
-    src="https://open.spotify.com/embed/track/1UPB5rYJ0bzn6mNSoAHrZC?"
-    width="100%" height="152"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-  </iframe>
-</div>
+    <script>
+      function redirInstagram() {
+        window.location.href = "https://instagram.com/yusssriill";
+      }
 
-<script>
-
-const name = "Val";
-
-const heartTemplate = `
-          @@@@@@@@@@@                @@@@@@@@@@@
-      @@@@@@@@@@@@@@@@@@          @@@@@@@@@@@@@@@@@@
-   @@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@
- @@@@@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@
- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                @@@@@@@@@@@@@@@@@@@@@@@@@@
-                   @@@@@@@@@@@@@@@@@@@@
-                       @@@@@@@@@@@@
-                            @@
-`;
-
-function romanticize(template, name) {
-    let result = "";
-    let index = 0;
-    for (let char of template) {
-        if (char === "@") {
-            result += name[index];
-            index = (index + 1) % name.length;
-        } else {
-            result += char;
-        }
-    }
-    return result;
-}
-
-const fakeCommand = `
-> initializing...
-> scanning data...
-> target found: Hai, Vawkyy!
-> injecting...
-> status: SUCCESS
-
-`;
-
-const heart = romanticize(heartTemplate, name);
-
-const message = `
-Special Message, for Vawkyy
-
-Thank you for being my safe place, 
-my calm, and my happiness.
-Terima kasih sudah hadir dalam hidup aku 
-dan membuat semuanya terasa lebih berarti.
-
-I may not always say it perfectly,
-tapi satu hal yang pasti...
-as long as im with you,
-you will never feel alone.
-
-Every day, my feelings for you grow deeper. 
-Kamu bukan cuma seseorang yang aku sayang
-kamu adalah alasan aku belajar menjadi lebih baik.
-
-I love you, today, tomorrow and always. 💝
-`;
-
-const fullText = fakeCommand + heart + "\n" + message;
-
-let i = 0;
-
-function typeWriter() {
-    if (i < fullText.length) {
-        document.getElementById("content").textContent += fullText.charAt(i);
-        i++;
-        window.scrollTo(0, document.body.scrollHeight);
-        setTimeout(typeWriter, 4);
-    } else {
-        document.getElementById("spotify").style.display = "block";
-    }
-}
-
-typeWriter();
-
-</script>
-
-</body>
+      function redirWhatsaap() {
+        window.location.href = "https://wa.me/089238120385";
+      }
+    </script>
+  </body>
 </html>
