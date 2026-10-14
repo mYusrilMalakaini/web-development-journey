@@ -8,9 +8,9 @@ Perjalanan belajar Web Development dari dasar hingga tingkat lanjut.
 - [x] HTML Table
 - [x] HTML Form
 - [x] HTML + CSS
-- [ ] CSS Layouting (Flexbox & Grid)
-- [ ] Responsive Web Design
-- [ ] JavaScript
+- [x] CSS Layouting (Flexbox & Grid)
+- [x] Responsive Web Design
+- [x] JavaScript
 
 ## 📁 Structure
 
