@@ -279,3 +279,76 @@ body, html {
 .btn-project:hover {
     color: #ff6b4a;
 }
+
+/* Media Query untuk Layar HP */
+@media screen and (max-width: 768px) {
+    
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .navbar-floating {
+        width: 92%;
+        top: 15px;
+        flex-direction: column;
+        padding: 8px 15px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-floating nav ul {
+        display: flex;
+        gap: 15px;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 5px 0;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;  
+    }
+
+    .navbar-floating nav ul::-webkit-scrollbar {
+        display: none; 
+    } 
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .projects-section {
+        padding: 40px 20px; 
+    }
+
+    .project-title {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
