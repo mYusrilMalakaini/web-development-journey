@@ -10,3 +10,6 @@ function redirWhatsapp() {
     window.location.href = "https://github.com/mYusrilMalakaini";
 }
 
+function reloadWeb() {
+    window.location.reload();
+}
