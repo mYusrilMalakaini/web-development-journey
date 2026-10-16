@@ -6,10 +6,8 @@
     <title>WEB YUSRIL</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
 </head>
 <body>
 
@@ -39,10 +37,11 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="#" class="btn-primary">Follow Saya! &rarr;</a>
-                <a href="#" class="btn-secondary" onclick="redirGithub()">Github!</a>
+                <div class="button-row">
+                    <span class="btn-primary">Follow Saya! &rarr;</span>
+                    <a href="#" class="btn-secondary" onclick="redirInstagram()">Instagram!</a>
+                </div>
             </div>
-        </div>
 
         <div class="scroll-indicator">
             SCROLL &darr;
@@ -59,7 +58,7 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="card-image">
-                    <img src="/multilayer-parallax/2.jpg" alt="Project 1">
+                    <img src="/multilayer-parallax/4.jpg" alt="Project 1">
                 </div>
                 <div class="card-content">
                     <h3>E-Commerce Website</h3>
@@ -69,13 +68,13 @@
                         <span>CSS</span>
                         <span>JavaScript</span>
                     </div>
-                    <a href="#" class="btn-project">Lihat Detail &rarr;</a>
+                    <a href="#" class="btn-project" onclick="redirGithub()">Lihat Detail &rarr;</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="card-image">
-                    <img src="/multilayer-parallax/2.jpg" alt="Project 2">
+                    <img src="/multilayer-parallax/1.jpg" alt="Project 2">
                 </div>
                 <div class="card-content">
                     <h3>Portfolio Landing Page</h3>
@@ -145,6 +144,17 @@
                     <a href="#" class="btn-project" onclick="">Lihat Detail &rarr;</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="social-media" id="social-media">
+        <h2>Hubungi Saya</h2>
+        <p>Temukan saya di media sosial atau hubungi saya.</p>
+
+        <div class="social-buttons">
+            <a href="#" onclick="redirInstagram()">Follow Saya</a>
+            <a href="#" onclick="redirGithub()">GitHub</a>
+            <a href="#" onclick="redirWhatsapp()">WhatsApp</a>
         </div>
     </section>
 

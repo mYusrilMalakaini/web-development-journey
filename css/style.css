@@ -101,6 +101,14 @@ body, html {
 
 .hero-buttons {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.button-row {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
@@ -272,7 +280,44 @@ body, html {
     color: #ff6b4a;
 }
 
-/* Media Query untuk Layar HP */
+.social-media {
+    text-align: center;
+    padding: 20px 60px;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-buttons a {
+    padding: 12px 24px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.social-buttons a:nth-child(1) {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+}
+
+.social-buttons a:nth-child(2) {
+    background-color: #353133;
+}
+
+.social-buttons a:nth-child(3) {
+    background-color: #25D366;
+}
+
+
 @media screen and (max-width: 768px) {
     
     html, body {
