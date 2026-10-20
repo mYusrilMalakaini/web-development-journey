@@ -13,5 +13,3 @@ function redirWhatsapp() {
 function reloadWeb() {
     window.location.reload();
 }
-
-function 
