@@ -306,15 +306,15 @@ body, html {
     border-radius: 10px;
 }
 
-.social-buttons a:nth-child(1) {
+.social-buttons:hover a:nth-child(1) {
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
 }
 
-.social-buttons a:nth-child(2) {
+.social-buttons:hover a:nth-child(2) {
     background-color: #353133;
 }
 
-.social-buttons a:nth-child(3) {
+.social-buttons:hover a:nth-child(3) {
     background-color: #25D366;
 }
 
@@ -419,7 +419,7 @@ body, html {
     min-height: 100vh;
     height: auto;
     }
-    
+
     .projects-section {
         min-height: auto;
         padding: 40px 5% 60px;

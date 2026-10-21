@@ -28,6 +28,16 @@
 //     console.log("belum boleh mengemudi");
 // }
 
+// const punyaMember = true;
+// const umur = 17;
+// const izinKhusus = false;
+
+// if (umur >= 18 && (punyaMember || izinKhusus)) {
+//     console.log("boleh mengikuti pelatihan");
+// } else {
+//     console.log("tidak boleh mengikuti pelatihan");
+// }
+
 const punyaMember = true;
 const umur = 17;
 const izinKhusus = false;
@@ -35,5 +45,6 @@ const izinKhusus = false;
 if (umur >= 18 && (punyaMember || izinKhusus)) {
     console.log("boleh mengikuti pelatihan");
 } else {
-    console.log("tidak boleh mengikuti pelatihan");
+    console.log("tidak bole mengikuti pelatihan");
+    
 }
