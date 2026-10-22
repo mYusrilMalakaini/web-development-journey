@@ -13,3 +13,16 @@ function redirWhatsapp() {
 function reloadWeb() {
     window.location.reload();
 }
+
+let title = document.querySelector("#hero-title");
+
+if(title != null) {
+    title.textContent ="Saya siap membuat web interaktif!";
+}
+
+let tombol1 = document.querySelector("tombol1");
+let pesan1 = document.querySelector("#pesan1");
+
+tombol1.addEventListener("click", function(){
+    pesan1.textContent = "Tombol berhasil diklik!";
+});
