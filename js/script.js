@@ -15,14 +15,15 @@ function reloadWeb() {
 }
 
 let title = document.querySelector("#hero-title");
+let btn1 = document.querySelector(".btn-secondary");
 
-if(title != null) {
-    title.textContent ="Saya siap membuat web interaktif!";
-}
-
-let tombol1 = document.querySelector("tombol1");
-let pesan1 = document.querySelector("#pesan1");
-
-tombol1.addEventListener("click", function(){
-    pesan1.textContent = "Tombol berhasil diklik!";
+btn1.addEventListener("click", function(){
+    if(title.textContent === "Selamat Datang") {
+    title.textContent = "Halo, Yusril!";
+    title.style.color = "red";
+    } else {
+        title.textContent = "Selamat Datang";
+        title.style.color = "blue";
+    } 
 });
+
