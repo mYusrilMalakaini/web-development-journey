@@ -14,17 +14,21 @@
                 <p>Silakan login untuk melanjutkan</p>
             </div>
     
-            <form id="form-login">
+            <form id="form-login" novalidate>
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" placeholder="Masukan username" required> 
     
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password"  placeholder="Masukan password" required>
-    
+                <div class="password-wrapper">
+                    
+                    <input type="password" name="password" id="password"  placeholder="Masukan password" required>
+                    <span id="toggle-password">👁️</span>
+                </div>
                 <button type="submit">Login</button>
                 <p id="pesan-login"></p>
+                <p id="pesan-selamat-datang"></p>
         </div>
-        </form>
+            </fsorm>
     </section>
 
 
