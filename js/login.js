@@ -4,31 +4,54 @@ const password = document.querySelector("#password");
 const pesanLogin = document.querySelector("#pesan-login");
 const pesanSD = document.querySelector("#pesan-selamat-datang");
 const tgPassword = document.querySelector("#toggle-password");
+const statusLogin = document.querySelector("#status-login");
+const btnLogout = document.querySelector("#btn-logout");
 let sudahLogin = false;
+btnLogout.disabled =  true;
+
+
+function tampilkanPesan(teks, warna) {
+    pesanLogin.textContent = teks;
+    pesanLogin.style.color = warna;
+}
 
 formLogin.addEventListener("submit", function(event){
     event.preventDefault();
-    
+
+    if(sudahLogin === true) {
+            return;
+        }
     if(username.value === "") {
-        pesanLogin.textContent = "Username wajib diisi!";
-        pesanLogin.style.color = "red";
+        tampilkanPesan("Username wajib diisi!","red");
     } else if (password.value === "") {
-        pesanLogin.textContent = "Password wajib diisi!";
-        pesanLogin.style.color = "red";
+        tampilkanPesan("Password wajib diisi!","red");
     } else if(username.value === "yusril" && password.value === "12345") {
+        btnLogout.disabled = false;
         sudahLogin = true;
         console.log(sudahLogin);
-        pesanLogin.textContent = "Halo, " + username.value + "!";
+        statusLogin.textContent = "Sedang login";
+        tampilkanPesan("anda berhasil login " + username.value + "!", "green");
         pesanSD.textContent = "Selamat Datang di Halaman Utama!"
-        pesanLogin.style.color = "green";
         pesanSD.style.color = "green";
         username.value = "";
         password.value = "";
     } else {
-        pesanLogin.textContent = "username/password salah";
+        tampilkanPesan("tempiq salah lu username/password", "red");
         pesanSD.textContent = "";
-        pesanLogin.style.color = "red";
+        sudahLogin = false;
+        statusLogin.textContent = "Status: Belum login";
+        btnLogout.disabled = true;
     }
+});
+
+btnLogout.addEventListener("click", function(){
+    btnLogout.disabled = true;
+    sudahLogin = false;
+    statusLogin.textContent = "Status: Belum login";
+    pesanLogin.textContent = "";
+    pesanSD.textContent = "";
+    username.value = "";
+    password.value = "";
 });
 
 tgPassword.addEventListener("click", function() {
@@ -40,3 +63,4 @@ tgPassword.addEventListener("click", function() {
         tgPassword.textContent = "👁️";
     }
 });
+
