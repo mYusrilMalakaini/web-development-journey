@@ -87,3 +87,15 @@ body {
     right: 12px;
     cursor: pointer;
 }
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.sembunyi {
+    display: none;
+}

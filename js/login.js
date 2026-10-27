@@ -6,14 +6,37 @@ const pesanSD = document.querySelector("#pesan-selamat-datang");
 const tgPassword = document.querySelector("#toggle-password");
 const statusLogin = document.querySelector("#status-login");
 const btnLogout = document.querySelector("#btn-logout");
+const btnTogglePesan = document.querySelector("#btn-toggle-pesan");
+
 let sudahLogin = false;
 btnLogout.disabled =  true;
+
+btnTogglePesan.addEventListener("click",function(){
+    pesanSD.classList.toggle("sembunyi");
+})
 
 
 function tampilkanPesan(teks, warna) {
     pesanLogin.textContent = teks;
-    pesanLogin.style.color = warna;
-}
+    pesanLogin.classList.remove("error");
+    pesanLogin.classList.remove("success");
+
+    if(warna === "red") {
+        pesanLogin.classList.add("error")
+    } else {
+        pesanLogin.classList.add("success");
+    }
+};
+
+function resetLogin(){
+    btnLogout.disabled = true;
+    sudahLogin = false;
+    statusLogin.textContent = "Status: Belum login";
+    pesanLogin.textContent = "";
+    pesanSD.textContent = "";
+    username.value = "";
+    password.value = "";
+};
 
 formLogin.addEventListener("submit", function(event){
     event.preventDefault();
@@ -36,23 +59,12 @@ formLogin.addEventListener("submit", function(event){
         username.value = "";
         password.value = "";
     } else {
-        tampilkanPesan("tempiq salah lu username/password", "red");
-        pesanSD.textContent = "";
-        sudahLogin = false;
-        statusLogin.textContent = "Status: Belum login";
-        btnLogout.disabled = true;
+        resetLogin();
+        tampilkanPesan("Username atau password salah!", "red");
     }
 });
 
-btnLogout.addEventListener("click", function(){
-    btnLogout.disabled = true;
-    sudahLogin = false;
-    statusLogin.textContent = "Status: Belum login";
-    pesanLogin.textContent = "";
-    pesanSD.textContent = "";
-    username.value = "";
-    password.value = "";
-});
+btnLogout.addEventListener("click", resetLogin);
 
 tgPassword.addEventListener("click", function() {
     if (password.type === "password") {
