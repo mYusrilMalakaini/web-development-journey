@@ -1,74 +1,111 @@
 const inputTugas = document.querySelector("#inputTugas");
 const tombolTambah = document.querySelector("#tombolTambah");
 const daftarTugas = document.querySelector("#daftarTugas");
-let daftarDataTugas = [];
 
-daftarDataTugas.push("Belajar JavaScript");
-console.log(daftarDataTugas);
-daftarDataTugas.push("belajar CSS");
-console.log(daftarDataTugas.length);
+// Ambil data tugas yang tersimpan
+let daftarDataTugas = JSON.parse(
+    localStorage.getItem("daftarDataTugas")
+) || [];
 
-
-localStorage.setItem(
-    "daftarDataTugas",
-    JSON.stringify(daftarDataTugas)
-);
-
-
-
-tombolTambah.addEventListener("click", function(){
-    tambahTugas();
-});
-
-function tambahTugas() {
-    if (inputTugas.value.trim() === "") {
-        return;
+// Ubah data lama yang masih berbentuk string menjadi objek
+daftarDataTugas = daftarDataTugas.map(function(item) {
+    if (typeof item === "string") {
+        return {
+            teks: item,
+            selesai: false
+        };
     }
 
+    return item;
+});
+
+// Simpan array tugas ke localStorage
+function simpanTugas() {
+    localStorage.setItem(
+        "daftarDataTugas",
+        JSON.stringify(daftarDataTugas)
+    );
+}
+
+// Tampilkan satu tugas ke halaman
+function tampilkanTugas(item) {
     const tugasBaru = document.createElement("li");
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.checked = item.selesai;
 
     const teksTugas = document.createElement("span");
-    teksTugas.textContent = inputTugas.value.trim();
+    teksTugas.textContent = item.teks;
 
     const tombolHapus = document.createElement("button");
     tombolHapus.textContent = "Hapus";
 
+    // Tampilkan gaya coret jika tugas sudah selesai
+    teksTugas.classList.toggle("selesai", item.selesai);
+
+    // Perbarui dan simpan status checkbox
+    checkbox.addEventListener("change", function() {
+        item.selesai = checkbox.checked;
+        teksTugas.classList.toggle("selesai", item.selesai);
+        simpanTugas();
+    });
+
+    // Hapus tugas dari array dan localStorage
+    tombolHapus.addEventListener("click", function() {
+        daftarDataTugas = daftarDataTugas.filter(function(tugas) {
+            return tugas !== item;
+        });
+
+        simpanTugas();
+        tugasBaru.remove();
+    });
+
+    // Susun elemen tugas
     tugasBaru.appendChild(checkbox);
     tugasBaru.appendChild(teksTugas);
     tugasBaru.appendChild(tombolHapus);
 
-    tombolHapus.addEventListener("click", function() {
-        tugasBaru.remove();
-    });
-
-    checkbox.addEventListener("change", function() {
-        teksTugas.classList.toggle("selesai", checkbox.checked);
-    });
-
     daftarTugas.appendChild(tugasBaru);
-    inputTugas.value = "";
 }
 
-inputTugas.addEventListener("keydown", function(event){
-    if(event.key === "Enter") {
-        tambahTugas();
-    }    
+// Tambahkan tugas baru
+function tambahTugas() {
+    const teks = inputTugas.value.trim();
+
+    if (teks === "") {
+        return;
+    }
+
+    const tugasBaru = {
+        teks: teks,
+        selesai: false
+    };
+
+    daftarDataTugas.push(tugasBaru);
+
+    simpanTugas();
+    tampilkanTugas(tugasBaru);
+
+    inputTugas.value = "";
+    inputTugas.focus();
+}
+
+// Klik tombol Tambah
+tombolTambah.addEventListener("click", function() {
+    tambahTugas();
 });
 
-localStorage.setItem("tes", "hallo");
-localStorage.setItem("tes", "Belajar JavaScript");
-console.log(localStorage.getItem("tes"));
+// Tekan Enter untuk menambah tugas
+inputTugas.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        tambahTugas();
+    }
+});
 
-const tugas = ["Belajar JavaScript","Belajar CSS"];
-localStorage.setItem("daftarTugas", JSON.stringify(tugas));
+// Tampilkan semua tugas yang tersimpan
+simpanTugas();
 
-const dataTersimpan = localStorage.getItem("daftarTugas");
-console.log(dataTersimpan);
-
-const tugasDibuka = JSON.parse(dataTersimpan);
-console.log(tugasDibuka[1]);
-
-
+for (let item of daftarDataTugas) {
+    tampilkanTugas(item);
+}
