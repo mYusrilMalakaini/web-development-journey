@@ -2,12 +2,15 @@ const inputTugas = document.querySelector("#inputTugas");
 const tombolTambah = document.querySelector("#tombolTambah");
 const daftarTugas = document.querySelector("#daftarTugas");
 
-// Ambil data tugas yang tersimpan
+console.log(daftarTugas[1].teks);
+console.log(daftarTugas[0].selesai);
+console.log(daftarTugas[2].selesai);
+
+
 let daftarDataTugas = JSON.parse(
     localStorage.getItem("daftarDataTugas")
 ) || [];
 
-// Ubah data lama yang masih berbentuk string menjadi objek
 daftarDataTugas = daftarDataTugas.map(function(item) {
     if (typeof item === "string") {
         return {
@@ -19,7 +22,6 @@ daftarDataTugas = daftarDataTugas.map(function(item) {
     return item;
 });
 
-// Simpan array tugas ke localStorage
 function simpanTugas() {
     localStorage.setItem(
         "daftarDataTugas",
@@ -27,7 +29,6 @@ function simpanTugas() {
     );
 }
 
-// Tampilkan satu tugas ke halaman
 function tampilkanTugas(item) {
     const tugasBaru = document.createElement("li");
 
@@ -41,17 +42,14 @@ function tampilkanTugas(item) {
     const tombolHapus = document.createElement("button");
     tombolHapus.textContent = "Hapus";
 
-    // Tampilkan gaya coret jika tugas sudah selesai
     teksTugas.classList.toggle("selesai", item.selesai);
 
-    // Perbarui dan simpan status checkbox
     checkbox.addEventListener("change", function() {
         item.selesai = checkbox.checked;
         teksTugas.classList.toggle("selesai", item.selesai);
         simpanTugas();
     });
 
-    // Hapus tugas dari array dan localStorage
     tombolHapus.addEventListener("click", function() {
         daftarDataTugas = daftarDataTugas.filter(function(tugas) {
             return tugas !== item;
@@ -61,7 +59,6 @@ function tampilkanTugas(item) {
         tugasBaru.remove();
     });
 
-    // Susun elemen tugas
     tugasBaru.appendChild(checkbox);
     tugasBaru.appendChild(teksTugas);
     tugasBaru.appendChild(tombolHapus);
@@ -69,7 +66,6 @@ function tampilkanTugas(item) {
     daftarTugas.appendChild(tugasBaru);
 }
 
-// Tambahkan tugas baru
 function tambahTugas() {
     const teks = inputTugas.value.trim();
 
@@ -91,19 +87,16 @@ function tambahTugas() {
     inputTugas.focus();
 }
 
-// Klik tombol Tambah
 tombolTambah.addEventListener("click", function() {
     tambahTugas();
 });
 
-// Tekan Enter untuk menambah tugas
 inputTugas.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         tambahTugas();
     }
 });
 
-// Tampilkan semua tugas yang tersimpan
 simpanTugas();
 
 for (let item of daftarDataTugas) {
