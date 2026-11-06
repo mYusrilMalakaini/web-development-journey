@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Judul form -->
+    <div class="form-title">
+        <h2>Sign up to FlashID</h2>
+    </div>
+
+    <!-- Form registrasi -->
+    <form id="formRegistrasi">
+        <div class="card-form">
+            <div class="form-group">
+                <!-- Input nama -->
+                <label for="inputNama">Full Name</label>
+                <input type="text" name="inputNama" id="inputNama" placeholder="Please enter your full name" required>
+            </div>
+            <div class="form-group">
+                <!-- Input email -->
+                <label for="inputEmail">Email</label>
+                <input type="email" name="inputEmail" id="inputEmail" placeholder="Please enter your email" required>
+            </div>
+            <div class="form-group">
+                <!-- Input password -->
+                <label for="inputPassword">Password</label>
+                <input type="password" name="inputPassword" id="inputPassword" placeholder="Please enter your password" required>
+            </div>
+            <div class="form-group">
+                <!-- Input Confirm Password -->
+                <label for="konfirmasiPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    name="konfirmasiPassword"
+                    id="konfirmasiPassword"
+                    placeholder="Please confirm your password"
+                    required
+                >
+            </div>
+    
+            <button id="tombolDaftar" type="submit">DAFTAR</button>
+            <p id="logIn" class="logIn">
+                Already have an account?
+                <a href="/login.html">Log in</a>
+            </p>
+        </div>
+    </form>
+
+    <p id="hasil"></p>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
