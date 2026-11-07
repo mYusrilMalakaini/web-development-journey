@@ -2,16 +2,25 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Latihan Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+    .selesai {
+        text-decoration: line-through;
+        color: gray;
+    }
+</style>
 </head>
 <body>
 
-    <form id="formNama">
-        <input type="text" id="nama" placeholder="Masukkan nama">
+    <h1>To-Do List</h1>
 
-        <button type="submit">Kirim</button>
-    </form>
+    <input type="text" id="inputTugas" placeholder="Masukkan tugas">
 
-    <script src="latihan_array.js"></script>
+    <button id="tombolTambah">Tambah</button>
+
+    <ul id="daftarTugas"></ul>
+
+    <script src="script.js"></script>
 </body>
 </html>

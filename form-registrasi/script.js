@@ -5,6 +5,19 @@ let inputEmail = document.querySelector("#inputEmail");
 let inputPassword = document.querySelector("#inputPassword");
 let konfirmasiPassword = document.querySelector("#konfirmasiPassword");
 let hasil = document.querySelector("#hasil");
+let togglePassword = document.querySelector("#togglePassword");
+let toggleKonfirmasi = document.querySelector("#toggleKonfirmasi");
+let passwordStrength = document.querySelector("#passwordStrength");
+
+function toggleVisibility(input, tombol) {
+    if (input.type === "password") {
+        input.type = "text";
+        tombol.textContent = "Hide";
+    } else {
+        input.type = "password";
+        tombol.textContent = "Show";
+    }
+}
 
 function tampilkanPesan(pesan, tipe) {
     hasil.textContent = pesan;
@@ -12,6 +25,30 @@ function tampilkanPesan(pesan, tipe) {
     hasil.classList.remove("error", "success");
     hasil.classList.add(tipe);
 }
+
+inputPassword.addEventListener("input",function(){
+    let password = inputPassword.value;
+
+    let adaKapital = /[A-Z]/.test(password);
+    let adaHurufKecil = /[a-z]/.test(password);
+    let adaAngka = /[0-9]/.test(password);
+    let adaSimbol = /[^A-Za-z0-9]/.test(password);
+
+
+    if(password.length < 8) {
+        passwordStrength.classList.remove("medium");
+        passwordStrength.classList.remove("strong");
+        passwordStrength.classList.add("weak");
+    } else if(password.length >= 8 && adaKapital && adaAngka && adaHurufKecil && adaSimbol) {
+        passwordStrength.classList.remove("weak");
+        passwordStrength.classList.remove("medium");
+        passwordStrength.classList.add("strong");
+    } else {
+        passwordStrength.classList.remove("weak");
+        passwordStrength.classList.remove("strong");
+        passwordStrength.classList.add("medium");
+    } 
+});
 
 formRegistrasi.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -23,25 +60,25 @@ formRegistrasi.addEventListener("submit", function(event) {
 
     // 1. Validasi nama
     if (nama === "") {
-        hasil.textContent = "Nama wajib diisi!";
+        tampilkanPesan("Nama wajib diisi!", "error");
         return;
     }
 
     if (nama.length < 3) {
-        hasil.textContent = "Nama minimal 3 karakter!";
+        tampilkanPesan("Nama minimal 3 karakter", "error");
         return;
     }
 
     // 2. Validasi email
     if (email === "") {
-        hasil.textContent = "Email wajib diisi!";
+        tampilkanPesan("Email wajib diisi!", "error");
         return;
     }
 
     let bagianEmail = email.split("@");
 
     if (bagianEmail.length !== 2) {
-        hasil.textContent = "Email harus memiliki tepat satu @!";
+        tampilkanPesan("Email harus memiliki satu @!", "error");
         return;
     }
 
@@ -55,34 +92,42 @@ formRegistrasi.addEventListener("submit", function(event) {
         domainValid.startsWith(".") ||
         domainValid.endsWith(".")
     ) {
-        hasil.textContent = "Format email tidak valid!";
+        tampilkanPesan("Format email tidak valid", "error");
         return;
     }
 
     // 3. Validasi password
     if (password.trim() === "") {
-        hasil.textContent = "Password wajib diisi!";
+        tampilkanPesan("Password wajib diisi!", "error");
         return;
     }
 
     if (password.length < 8) {
-        hasil.textContent = "Password minimal 8 karakter!";
+        tampilkanPesan("Password wajib memiliki 8 karakter", "error");
         return;
     }
 
     // 4. Validasi konfirmasi password
     if (konfirmasi === "") {
-        hasil.textContent = "Konfirmasi password wajib diisi!";
+        tampilkanPesan("konfirmasi password wajib diiisi", "error");
         return;
     }
 
     if (password !== konfirmasi) {
-        hasil.textContent = "Password tidak cocok!";
+        tampilkanPesan("Password tidak cocok", "error");
         return;
     }
 
     // 5. Semua validasi berhasil
-    hasil.textContent = "Registrasi berhasil!";
+    tampilkanPesan("Registrasi Berhasil", "success");
+});
+
+togglePassword.addEventListener("click", function() {
+    toggleVisibility(inputPassword, togglePassword);
+});
+
+toggleKonfirmasi.addEventListener("click", function() {
+    toggleVisibility(konfirmasiPassword, toggleKonfirmasi);
 });
 
 

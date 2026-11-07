@@ -88,3 +88,26 @@ label {
     background-color: #dcfce7;
     border: 1px solid #86efac;
 }
+
+
+#passwordStrength {
+    display: none;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#passwordStrength.weak {
+    display: block;
+    color: #dc2626;
+}
+
+#passwordStrength.medium {
+    display: block;
+    color: #d97706;
+}
+
+#passwordStrength.strong {
+    display: block;
+    color: #15803d;
+}

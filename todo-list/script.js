@@ -1,104 +1,35 @@
-const inputTugas = document.querySelector("#inputTugas");
-const tombolTambah = document.querySelector("#tombolTambah");
-const daftarTugas = document.querySelector("#daftarTugas");
+let inputTugas = document.querySelector("#inputTugas");
+let tombolTambah = document.querySelector("#tombolTambah");
+let daftarTugas = document.querySelector("#daftarTugas");
 
-console.log(daftarTugas[1].teks);
-console.log(daftarTugas[0].selesai);
-console.log(daftarTugas[2].selesai);
-
-
-let daftarDataTugas = JSON.parse(
-    localStorage.getItem("daftarDataTugas")
-) || [];
-
-daftarDataTugas = daftarDataTugas.map(function(item) {
-    if (typeof item === "string") {
-        return {
-            teks: item,
-            selesai: false
-        };
-    }
-
-    return item;
-});
-
-function simpanTugas() {
-    localStorage.setItem(
-        "daftarDataTugas",
-        JSON.stringify(daftarDataTugas)
-    );
-}
-
-function tampilkanTugas(item) {
-    const tugasBaru = document.createElement("li");
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.checked = item.selesai;
-
-    const teksTugas = document.createElement("span");
-    teksTugas.textContent = item.teks;
-
-    const tombolHapus = document.createElement("button");
+tombolTambah.addEventListener("click", function(){
+    let namaTugas = inputTugas.value;
+    let tugasBaru = document.createElement("li");
+    tugasBaru.textContent = namaTugas.trim();
+    let tombolHapus = document.createElement("button");
+    let tombolSelesai = document.createElement("button");
     tombolHapus.textContent = "Hapus";
+    tombolSelesai.textContent = "selesai";
+    tombolHapus.classList.add("tombolHapus");
+    tombolSelesai.classList.add("tombolSelesai");
 
-    teksTugas.classList.toggle("selesai", item.selesai);
 
-    checkbox.addEventListener("change", function() {
-        item.selesai = checkbox.checked;
-        teksTugas.classList.toggle("selesai", item.selesai);
-        simpanTugas();
-    });
-
-    tombolHapus.addEventListener("click", function() {
-        daftarDataTugas = daftarDataTugas.filter(function(tugas) {
-            return tugas !== item;
-        });
-
-        simpanTugas();
-        tugasBaru.remove();
-    });
-
-    tugasBaru.appendChild(checkbox);
-    tugasBaru.appendChild(teksTugas);
-    tugasBaru.appendChild(tombolHapus);
-
-    daftarTugas.appendChild(tugasBaru);
-}
-
-function tambahTugas() {
-    const teks = inputTugas.value.trim();
-
-    if (teks === "") {
+    if(namaTugas.trim() === ""){
         return;
+    } else {
+        tugasBaru.appendChild(tombolHapus);
+        tugasBaru.appendChild(tombolSelesai);
+        daftarTugas.appendChild(tugasBaru);
+        inputTugas.value = "";
     }
+});
 
-    const tugasBaru = {
-        teks: teks,
-        selesai: false
+daftarTugas.addEventListener("click", function(event){
+    if(event.target.classList.contains("tombolHapus")){
+        event.target.parentElement.remove();
     };
-
-    daftarDataTugas.push(tugasBaru);
-
-    simpanTugas();
-    tampilkanTugas(tugasBaru);
-
-    inputTugas.value = "";
-    inputTugas.focus();
-}
-
-tombolTambah.addEventListener("click", function() {
-    tambahTugas();
-});
-
-inputTugas.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        tambahTugas();
+    if(event.target.classList.contains("tombolSelesai")){
+        event.target.parentElement.classList.toggle("selesai");
     }
 });
 
-simpanTugas();
-
-for (let item of daftarDataTugas) {
-    tampilkanTugas(item);
-}
